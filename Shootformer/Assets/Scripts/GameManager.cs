@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject Container;
 
+    public bool isLevel2 = false;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,9 +67,12 @@ public class GameManager : MonoBehaviour
             //PlayerCamera.gameObject.SetActive(false);
             //MainCamera.gameObject.SetActive(true);
             AestheticGun.gameObject.SetActive(true);
-            Vector3 position = Player.transform.position;
-            position.z = 0;
-            Player.transform.position = position;
+            if (isLevel2 == false)
+            {
+                Vector3 position = Player.transform.position;
+                position.z = 0;
+                Player.transform.position = position;
+            }
             Player.transform.rotation = Quaternion.Euler(0, 90, 0);
 
 
@@ -107,6 +114,10 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        isLevel2 = true;
+    }
     
     
 }

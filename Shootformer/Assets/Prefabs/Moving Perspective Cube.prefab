@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 8472071989239261303}
   m_Layer: 3
   m_Name: Moving Perspective Cube
-  m_TagString: PerspectiveCube
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
