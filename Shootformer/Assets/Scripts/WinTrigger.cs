@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class WinTrigger : MonoBehaviour
 {
+    private int nextScene;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        nextScene = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     // Update is called once per frame
@@ -21,7 +23,7 @@ public class WinTrigger : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            SceneManager.LoadScene("WinScreen");
+            SceneManager.LoadScene(nextScene);
         }
     }
 }
