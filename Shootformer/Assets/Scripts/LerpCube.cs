@@ -22,6 +22,8 @@ public class LerpCube : MonoBehaviour
 
     public GameObject MovingCubes;
 
+    bool playerOnCube = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,28 +47,25 @@ public class LerpCube : MonoBehaviour
 
         }
 
-        
+        if (playerOnCube == true)
+        {
+            player.transform.parent = Cube.transform;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            player.transform.parent = colliderbox.transform;
+            playerOnCube = true;
+
+            //player.transform.parent = Cube.transform.;
             
         }
 
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            Cube.transform.parent = player.transform;
-
-        }
-
-    }
+   
 
     private void OnTriggerExit(Collider other)
     {
