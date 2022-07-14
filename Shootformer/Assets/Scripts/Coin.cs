@@ -12,6 +12,8 @@ public class Coin : MonoBehaviour
     public GameObject self;
 
     public AudioSource CoinGrab;
+
+    public bool canShoot;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +39,12 @@ public class Coin : MonoBehaviour
 
     public void CoinShot()
     {
-        gm.coinsObtained = gm.coinsObtained + 1;
-        CoinGrab.Play();
-        Destroy(self);
+        if(canShoot == true)
+        {
+            gm.coinsObtained = gm.coinsObtained + 1;
+            CoinGrab.Play();
+            Destroy(self);
+        }
+        
     }
 }

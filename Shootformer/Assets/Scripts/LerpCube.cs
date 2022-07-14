@@ -24,10 +24,15 @@ public class LerpCube : MonoBehaviour
 
     bool playerOnCube = false;
 
+    private Vector3 posLastFrame = Vector3.zero;
+
+    public CharacterController CC;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        CC = player.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -49,8 +54,11 @@ public class LerpCube : MonoBehaviour
 
         if (playerOnCube == true)
         {
-            player.transform.parent = Cube.transform;
+            //  player.transform.parent = Cube.transform;
+            CC.Move(transform.position - posLastFrame);
         }
+
+        posLastFrame = transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,6 +79,7 @@ public class LerpCube : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            playerOnCube = false;
             player.transform.parent = null;
             Cube.transform.parent = MovingCubes.transform;
         }

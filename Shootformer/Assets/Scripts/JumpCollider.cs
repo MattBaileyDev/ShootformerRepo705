@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpCollider : MonoBehaviour
 {
-    public PlayerMovement playerMove;
+    public PlayerMovement1 playerMove;
     public float jumpBoost = 3;
     // Start is called before the first frame update
     void Start()

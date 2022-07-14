@@ -25,7 +25,7 @@ public class Gun : MonoBehaviour
 
     public string RaycastReturn;
 
-    public EnemyAI enemy;
+    public EnemyAI1 enemy;
 
     public ParticleSystem muzzleflash;
 
@@ -115,7 +115,7 @@ public class Gun : MonoBehaviour
                 RaycastReturn = hit.collider.gameObject.name;
                 if (hit.collider.gameObject.tag == "Enemy")
                 {
-                    enemy = hit.collider.gameObject.GetComponent<EnemyAI>();
+                    enemy = hit.collider.gameObject.GetComponent<EnemyAI1>();
                     enemy.TakeDamage();
                     HitSound.Play();
                 }

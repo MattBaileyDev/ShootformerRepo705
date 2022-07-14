@@ -25,7 +25,7 @@ public class PlayerMovement1 : MonoBehaviour
 
     public AudioSource Jump;
 
-    
+    private Vector3 parentPosLastFrame;
 
    
 
@@ -41,6 +41,12 @@ public class PlayerMovement1 : MonoBehaviour
         
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (gameObject.transform.parent!=null)
+        {
+
+        }
+
 
         if(isGrounded && velocity.y < 0)
         {

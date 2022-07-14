@@ -382,6 +382,7 @@ MonoBehaviour:
   colliderbox: {fileID: 4263201937786919338}
   Cube: {fileID: 7263215537544460778}
   MovingCubes: {fileID: 7263215537544460778}
+  CC: {fileID: 0}
 --- !u!65 &4623090328024035484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -393,8 +394,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.4028854, y: 4.3181434, z: 41.108524}
-  m_Center: {x: 0.94940567, y: 3.2960255, z: 18.554262}
+  m_Size: {x: 2.0357819, y: 4.317966, z: 41.108524}
+  m_Center: {x: 1.0044022, y: 3.2959368, z: 18.554262}
 --- !u!1001 &8881236848826271605
 PrefabInstance:
   m_ObjectHideFlags: 0
