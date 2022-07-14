@@ -4,29 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerCamera
-  - Grenade
-  - Bullet
-  - GameManager
-  - PerspectiveCube
   - Enemy
-  - Target
-  - Coin
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Cover
+  - Ignore Shot
+  - Cover Invisible
+  - Player
+  - Enemy
+  - Bound
   - 
   - 
   - 

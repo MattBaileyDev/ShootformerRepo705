@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // This is a template script for in-game object health manager.
 // Any in-game entity that reacts to a shot must have this script with the public function TakeDamage().
 public class HealthManager : MonoBehaviour
 {
+	public float phealth = 100f;
 	// Class to encapsulate damage parameters for the callback function.
 	public class DamageInfo
 	{
@@ -28,6 +30,15 @@ public class HealthManager : MonoBehaviour
 	// You may remove the 'virtual' keyword before coding the content.
 	public virtual void TakeDamage(Vector3 location, Vector3 direction, float damage, Collider bodyPart=null, GameObject origin=null)
 	{
+		phealth -= damage;
+
+		if (phealth < 0)
+		{
+			dead = true;
+			phealth = 0;
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		}
+
 	}
 
 	// This is the message receiver for damage taken by a child gameObject rigidbody (ex.: ragdoll)

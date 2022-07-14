@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using EnemyAI;
 
 public class Gun : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Gun : MonoBehaviour
 
     public EnemyAI1 enemy;
 
+    public EnemyHealth enemyHealth;
+
     public ParticleSystem muzzleflash;
 
     //public float pointRotationSpeed = 1;
@@ -39,7 +42,7 @@ public class Gun : MonoBehaviour
 
     public Coin coin;
 
-    
+    public int bulletDamage = 10;
     
 
    // float xRotation = 0f;
@@ -112,11 +115,16 @@ public class Gun : MonoBehaviour
             targetPoint = hit.point;
             if (hit.collider != null)
             {
+                hit.collider.SendMessageUpwards("HitCallback", new HealthManager.DamageInfo(hit.point, ShootPoint.forward, bulletDamage, hit.collider), SendMessageOptions.DontRequireReceiver);
+
                 RaycastReturn = hit.collider.gameObject.name;
                 if (hit.collider.gameObject.tag == "Enemy")
                 {
-                    enemy = hit.collider.gameObject.GetComponent<EnemyAI1>();
-                    enemy.TakeDamage();
+                    //enemy = hit.collider.gameObject.GetComponent<EnemyAI1>();
+                    //enemy.TakeDamage();
+                    //enemyHealth = hit.collider.gameObject.GetComponent<EnemyHealth>();
+                    ////enemyHealth.TakeDamage();
+                    
                     HitSound.Play();
                 }
                 Debug.Log(RaycastReturn);
