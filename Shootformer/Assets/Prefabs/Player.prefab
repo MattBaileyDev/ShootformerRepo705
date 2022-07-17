@@ -508,6 +508,7 @@ MonoBehaviour:
   jumpHeight: 2
   gm: {fileID: 0}
   MainCamera: {fileID: 0}
+  Jump: {fileID: 0}
 --- !u!120 &502675734
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -624,6 +625,8 @@ MonoBehaviour:
   Shootpoint: {fileID: 3785688040041114458}
   NadeShootPoint: {fileID: 4926971486870303952}
   ShootPoint: {fileID: 1736713618939306461}
+  ShotSound: {fileID: 0}
+  HitSound: {fileID: 0}
   nadeVelocity: 10
   bulletForceForward: 100
   bulletForceUp: 0
@@ -631,10 +634,12 @@ MonoBehaviour:
   gm: {fileID: 0}
   RaycastReturn: 
   enemy: {fileID: 0}
+  enemyHealth: {fileID: 0}
   muzzleflash: {fileID: 1389016900316940836}
   BulletTrail: {fileID: 1562568563911269109, guid: 3efc14b0717e3f243b19f128dab0aa97, type: 3}
   target: {fileID: 0}
   coin: {fileID: 0}
+  bulletDamage: 10
 --- !u!114 &502675735
 MonoBehaviour:
   m_ObjectHideFlags: 0

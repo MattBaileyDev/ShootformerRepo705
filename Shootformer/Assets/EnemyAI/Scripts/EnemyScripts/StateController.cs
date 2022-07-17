@@ -142,6 +142,7 @@ namespace EnemyAI
 		{
 			// Trigger initial state enable function.
 			currentState.OnEnableActions(this);
+			
 		}
 
 		void Update()
