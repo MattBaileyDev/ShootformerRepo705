@@ -1,4 +1,5 @@
-﻿using System.Security.Permissions;
+﻿using System.Diagnostics;
+using System.Security.Permissions;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,7 +19,7 @@ public class HealthManager : MonoBehaviour
 	public GameObject Damage42D;
 
 	public bool isTakingDamage;
-	public float damageTimer = 8;
+	public float damageTimer = 5;
 
 	public float phealth = 100f;
 	// Class to encapsulate damage parameters for the callback function.
@@ -47,6 +48,7 @@ public class HealthManager : MonoBehaviour
 	{
 
 		isTakingDamage = true;
+		damageTimer = 5;
 		phealth -= damage;
 
 		
@@ -75,6 +77,37 @@ public class HealthManager : MonoBehaviour
 
 	void Update()
     {
+		if (isTakingDamage == true)
+		{
+
+			if (damageTimer > 0)
+			{
+				damageTimer -= Time.deltaTime;
+
+				if (damageTimer <= 0)
+				{
+					isTakingDamage = false;
+				}
+			}
+		}
+
+		if (isTakingDamage == false)
+		{
+
+			if (damageTimer <= 0)
+			{
+				phealth += Time.deltaTime * 10;
+				
+			}
+
+
+			if (phealth >= 100)
+			{
+				damageTimer = 5;
+				phealth = 100;
+			}
+		}
+
 		if (phealth >= 100)
 		{
 			Damage1.SetActive(false);
@@ -135,34 +168,7 @@ public class HealthManager : MonoBehaviour
 			Damage42D.SetActive(true);
 		}
 
-		if (isTakingDamage)
-        {
-			if (damageTimer > 0)
-            {
-				damageTimer -= Time.deltaTime;
-				
-				if (damageTimer <= 0)
-                {
-					isTakingDamage = false;
-                }
-            }
-        }
-
-		if (!isTakingDamage)
-        {
-
-			if (damageTimer <= 0)
-            {
-				phealth += Time.deltaTime * 10;
-			}
-			
-			
-			if (phealth >= 100)
-            {
-				damageTimer = 8;
-				phealth = 100;
-            }
-        }
+		
     }
 
 

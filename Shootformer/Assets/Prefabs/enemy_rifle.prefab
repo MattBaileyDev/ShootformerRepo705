@@ -540,8 +540,8 @@ MonoBehaviour:
   - {fileID: 0}
   bullets: 32
   viewRadius: 30
-  viewAngle: 90
-  perceptionRadius: 10
+  viewAngle: 180
+  perceptionRadius: 20
   nearRadius: 0
   nav: {fileID: 0}
   waypointIndex: 0
@@ -590,6 +590,8 @@ MonoBehaviour:
   Damage22D: {fileID: 0}
   Damage32D: {fileID: 0}
   Damage42D: {fileID: 0}
+  isTakingDamage: 0
+  damageTimer: 8
   phealth: 100
   dead: 0
   health: 70
