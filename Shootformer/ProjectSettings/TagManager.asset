@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - GameManager
+  - PerspectiveCube
+  - Target
+  - Bullet
+  - Grenade
+  - Coin
   layers:
   - Default
   - TransparentFX
