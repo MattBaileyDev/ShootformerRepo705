@@ -535,7 +535,9 @@ MonoBehaviour:
   currentState: {fileID: 11400000, guid: 5f57170ec6dffc7488b0a2159dbccf3d, type: 2}
   remainState: {fileID: 11400000, guid: 301991cf0b50f1745a515210895c9156, type: 2}
   aimTarget: {fileID: 0}
-  patrolWayPoints: []
+  patrolWayPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   bullets: 32
   viewRadius: 30
   viewAngle: 90
@@ -580,6 +582,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b801e50631684cd45b011ea99f20f663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage1: {fileID: 0}
+  Damage2: {fileID: 0}
+  Damage3: {fileID: 0}
+  Damage4: {fileID: 0}
+  Damage12D: {fileID: 0}
+  Damage22D: {fileID: 0}
+  Damage32D: {fileID: 0}
+  Damage42D: {fileID: 0}
   phealth: 100
   dead: 0
   health: 70

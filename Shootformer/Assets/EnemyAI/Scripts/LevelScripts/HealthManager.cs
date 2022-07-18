@@ -1,4 +1,5 @@
 ﻿using System.Security.Permissions;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,9 @@ public class HealthManager : MonoBehaviour
 	public GameObject Damage22D;
 	public GameObject Damage32D;
 	public GameObject Damage42D;
+
+	public bool isTakingDamage;
+	public float damageTimer = 8;
 
 	public float phealth = 100f;
 	// Class to encapsulate damage parameters for the callback function.
@@ -41,43 +45,11 @@ public class HealthManager : MonoBehaviour
 	// You may remove the 'virtual' keyword before coding the content.
 	public virtual void TakeDamage(Vector3 location, Vector3 direction, float damage, Collider bodyPart=null, GameObject origin=null)
 	{
+
+		isTakingDamage = true;
 		phealth -= damage;
 
-		if (phealth <= 100 && phealth > 75)
-        {
-			Damage1.SetActive(true);
-			Damage12D.SetActive(true);
-		}
-
-		if (phealth <= 75 && phealth > 50)
-		{
-			Damage1.SetActive(false);
-			Damage12D.SetActive(false);
-			Damage2.SetActive(true);
-			Damage22D.SetActive(true);
-		}
-
-		if (phealth <= 50 && phealth > 25)
-		{
-			Damage1.SetActive(false);
-			Damage12D.SetActive(false);
-			Damage2.SetActive(false);
-			Damage22D.SetActive(false);
-			Damage3.SetActive(true);
-			Damage32D.SetActive(true);
-		}
-
-		if (phealth <= 25 && phealth > 0)
-        {
-			Damage1.SetActive(false);
-			Damage12D.SetActive(false);
-			Damage2.SetActive(false);
-			Damage22D.SetActive(false);
-			Damage3.SetActive(false);
-			Damage32D.SetActive(false);
-			Damage4.SetActive(true);
-			Damage42D.SetActive(true);
-		}
+		
 
 	
 
@@ -101,6 +73,97 @@ public class HealthManager : MonoBehaviour
 
 	}
 
+	void Update()
+    {
+		if (phealth >= 100)
+		{
+			Damage1.SetActive(false);
+			Damage12D.SetActive(false);
+			Damage2.SetActive(false);
+			Damage22D.SetActive(false);
+			Damage3.SetActive(false);
+			Damage32D.SetActive(false);
+			Damage4.SetActive(false);
+			Damage42D.SetActive(false);
+		}
+
+		if (phealth <= 100 && phealth > 75)
+		{
+			Damage1.SetActive(true);
+			Damage12D.SetActive(true);
+			Damage2.SetActive(false);
+			Damage22D.SetActive(false);
+			Damage3.SetActive(false);
+			Damage32D.SetActive(false);
+			Damage4.SetActive(false);
+			Damage42D.SetActive(false);
+		}
+
+		if (phealth <= 75 && phealth > 50)
+		{
+			Damage1.SetActive(false);
+			Damage12D.SetActive(false);
+			Damage2.SetActive(true);
+			Damage22D.SetActive(true);
+			Damage3.SetActive(false);
+			Damage32D.SetActive(false);
+			Damage4.SetActive(false);
+			Damage42D.SetActive(false);
+		}
+
+		if (phealth <= 50 && phealth > 25)
+		{
+			Damage1.SetActive(false);
+			Damage12D.SetActive(false);
+			Damage2.SetActive(false);
+			Damage22D.SetActive(false);
+			Damage3.SetActive(true);
+			Damage32D.SetActive(true);
+			Damage4.SetActive(false);
+			Damage42D.SetActive(false);
+		}
+
+		if (phealth <= 25 && phealth > 0)
+		{
+			Damage1.SetActive(false);
+			Damage12D.SetActive(false);
+			Damage2.SetActive(false);
+			Damage22D.SetActive(false);
+			Damage3.SetActive(false);
+			Damage32D.SetActive(false);
+			Damage4.SetActive(true);
+			Damage42D.SetActive(true);
+		}
+
+		if (isTakingDamage)
+        {
+			if (damageTimer > 0)
+            {
+				damageTimer -= Time.deltaTime;
+				
+				if (damageTimer <= 0)
+                {
+					isTakingDamage = false;
+                }
+            }
+        }
+
+		if (!isTakingDamage)
+        {
+
+			if (damageTimer <= 0)
+            {
+				phealth += Time.deltaTime * 10;
+			}
+			
+			
+			if (phealth >= 100)
+            {
+				damageTimer = 8;
+				phealth = 100;
+            }
+        }
+    }
 
 
 	// This is the message receiver for damage taken by a child gameObject rigidbody (ex.: ragdoll)
