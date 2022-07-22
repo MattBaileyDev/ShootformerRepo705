@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cb3c75a1f34bdfd4ba14cc092bda02aa
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 427d207e0e0ffab49b46d4e04f1ed918, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Mossy Cliff/stylizedmossycliff.sbsar
