@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabList: []
   prefabData:
-  - prefab: {fileID: 8439506048520143327, guid: c80fbf850ad97a34694544deb65b7fa2, type: 3}
+  - prefab: {fileID: 157690, guid: d93ec03b51f37fd4d905a60a08a4fbbc, type: 3}
+    selected: 1
+  - prefab: {fileID: 179510, guid: bee8d047e16101c438fb33382ab66935, type: 3}
+    selected: 1
+  - prefab: {fileID: 154622, guid: 9991b226736b6964782c28d07cef8881, type: 3}
+    selected: 1
+  - prefab: {fileID: 182100, guid: 7505f79cb619cfd4ebb6af0704ad4260, type: 3}
     selected: 1
   paintType: 0
   brushSize: 1
@@ -42,7 +48,7 @@ MonoBehaviour:
   maxRequiredSlope: 0
   prefabOriginOffset: {x: 0, y: 0, z: 0}
   prefabRotationOffset: {x: 0, y: 0, z: 0}
-  draggingAction: 1
+  draggingAction: 0
   rotationAxis: 0
   rotationSensitivity: 10
   parentingStyle: 2
@@ -59,7 +65,7 @@ MonoBehaviour:
   scaleType: 1
   scaleApplicationType: 0
   minScale: 1
-  maxScale: 3
+  maxScale: 2
   minXScale: 1
   maxXScale: 1
   minYScale: 1
