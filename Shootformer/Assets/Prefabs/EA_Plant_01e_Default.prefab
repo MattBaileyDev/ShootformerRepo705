@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 5856377582355959783}
   - component: {fileID: 5854233816313993481}
   - component: {fileID: 5844295739108420035}
+  - component: {fileID: 6459701031909880358}
   m_Layer: 0
   m_Name: EA_Fruit_PRE (28)
   m_TagString: Untagged
@@ -222,6 +223,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6459701031909880358
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5857558871310489155}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: abcae684faccb174897c79956dbed09b, type: 3}
 --- !u!1 &5858086671159647335
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +248,7 @@ GameObject:
   - component: {fileID: 5861631079231915287}
   - component: {fileID: 5850629379949606187}
   - component: {fileID: 5844382220734415823}
+  - component: {fileID: 719656664938348601}
   m_Layer: 0
   m_Name: EA_Plant_01e
   m_TagString: Untagged
@@ -303,3 +319,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &719656664938348601
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858086671159647335}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3a8e1caeca5040147a1bf0356632d82d, type: 3}
