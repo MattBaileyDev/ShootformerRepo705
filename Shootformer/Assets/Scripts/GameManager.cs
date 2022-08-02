@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coins.text = "COINS:" + coinsObtained + "/3";
+        coins.text = "COINS - " + coinsObtained + "/3";
 
         if (Input.GetKeyDown(KeyCode.F))
         {
