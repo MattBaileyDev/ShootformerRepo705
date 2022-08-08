@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Security.Permissions;
 using System.Threading;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +23,11 @@ public class HealthManager : MonoBehaviour
 	public float damageTimer = 5;
 
 	public float phealth = 100f;
+	public DeathBox db;
+	public PlayerMovement1 pm;
+	public GameObject Player;
+	public GameObject Checkpoint1;
+	public GameObject Checkpoint2;
 	// Class to encapsulate damage parameters for the callback function.
 	public class DamageInfo
 	{
@@ -60,6 +66,7 @@ public class HealthManager : MonoBehaviour
 
 		if (phealth <= 0)
 		{
+
 			dead = true;
 			Damage1.SetActive(false);
 			Damage12D.SetActive(false);
@@ -70,9 +77,41 @@ public class HealthManager : MonoBehaviour
 			Damage4.SetActive(true);
 			Damage42D.SetActive(true);
 			phealth = 0;
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+			if (db.reachedCheckpoint1 == false)
+			{
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			}
+			else
+			if (db.reachedCheckpoint1 == true && db.reachedCheckpoint2 == false)
+			{
+				pm.enabled = false;
+				Player.transform.position = Checkpoint1.transform.position;
+				dead = false;
+				phealth = 100;
+				StartCoroutine("EnablePM");
+				
+			}
+			else
+			if (db.reachedCheckpoint2 == true)
+			{
+				pm.enabled = false;
+				Player.transform.position = Checkpoint2.transform.position;
+				dead = false;
+				phealth = 100;
+				StartCoroutine("EnablePM");
+				
+
+			}
+			
 		}
 
+	}
+
+	IEnumerator EnablePM()
+	{
+		yield return new WaitForSeconds(1);
+		pm.enabled = true;
 	}
 
 	void Update()

@@ -30,7 +30,7 @@ public class Checkpoints : MonoBehaviour
         else
         if (GetComponent<Collider>().name == "Checkpoint 2")
         {
-            db.reachedCheckpoint1 = true;
+            db.reachedCheckpoint2 = true;
         }
     }
 }
