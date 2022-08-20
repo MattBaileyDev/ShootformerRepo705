@@ -59,6 +59,16 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Controls");
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void Credits2()
+    {
+        SceneManager.LoadScene("Credits 2");
+    }
+
     public void Play()
     {
         SceneManager.LoadScene(1);

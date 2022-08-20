@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public bool isLevel2 = false;
 
-    
+    public GameObject mouseLook;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         if (isFirstPerson == false)
         {
-            
+            mouseLook.GetComponent<MouseLook1>().enabled = false;
             canvas.transform.parent = MainCamera.transform;
             PlayerCam.Priority = 9;
             Main.Priority = 10;
@@ -82,8 +82,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            
-            
+
+            mouseLook.GetComponent<MouseLook1>().enabled = true;
             canvas.transform.parent = PlayerCamera.transform;
             AestheticGun.gameObject.SetActive(false);
             Container.SetActive(true);

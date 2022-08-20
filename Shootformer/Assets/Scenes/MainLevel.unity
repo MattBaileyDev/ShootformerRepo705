@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 452356281, guid: 48bbbd718c2a9154f93bd017b03d57e7, type: 3}
   m_PrefabInstance: {fileID: 1653002009}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 989827819}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
@@ -9918,6 +9918,7 @@ MonoBehaviour:
   PlayerCam: {fileID: 170791420}
   Container: {fileID: 304375982}
   isLevel2: 0
+  mouseLook: {fileID: 989827819}
 --- !u!65 &352270947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12871,7 +12872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aaf8601f9e079647a5bd50374c9176f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMove: {fileID: 0}
+  playerMove: {fileID: 2073111240}
   jumpBoost: 4
 --- !u!65 &478517734
 BoxCollider:
@@ -27391,6 +27392,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &989827819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 452356279, guid: 48bbbd718c2a9154f93bd017b03d57e7, type: 3}
+  m_PrefabInstance: {fileID: 1653002009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &990121668
 GameObject:
   m_ObjectHideFlags: 0
@@ -42026,6 +42032,10 @@ PrefabInstance:
     - target: {fileID: 399657186, guid: 48bbbd718c2a9154f93bd017b03d57e7, type: 3}
       propertyPath: m_UiScaleMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452356282, guid: 48bbbd718c2a9154f93bd017b03d57e7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 502675727, guid: 48bbbd718c2a9154f93bd017b03d57e7, type: 3}
       propertyPath: gm
